@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h3>All chats here</h3>
+    <button><a href="chats/newcon">new post</a></button>
+    <% for(let chat of data) { %>
+        
+        <h2>from :<%=chat.from%></h2>
+        <h4><%=chat.msg%></h4>
+        <h2>to : <span><%=chat.to%></span></h2>
+        
+    <%}%>
+</body>
+
+</html>
