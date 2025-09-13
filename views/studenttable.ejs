@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Data Table</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+
+<body>
+    <div class="table-container">
+        <h2>Student Records</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Full Name</th>
+                    <th>Age</th>
+                    <th>Address</th>
+                    <th>Grades</th>
+                    <th>Total Marks</th>
+                    <th>Operations</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% if (Array.isArray(data) && data.length> 0) { %>
+                    <% for (let student of data) { %>
+                        <tr>
+                            <td>
+                                <%= student.fullname %>
+                            </td>
+                            <td>
+                                <%= student.age %>
+                            </td>
+                            <td>
+                                <%= student.address %>
+                            </td>
+                            <td>
+                                <%= student.grades %>
+                            </td>
+                            <td>
+                                <%= student.totalMarks %>
+                            </td>
+                            <td>
+                               <a href="/editdata/<%= student.id %>" class="update-link">Update</a>
+
+                            </td>
+                            <td>
+                                <a href="http://localhost:3030/form" class="update-link">Delete</a>
+                            </td>
+                        </tr>
+                        <% } %>
+                            <% } else { %>
+                                <tr>
+                                    <td colspan="5" style="text-align:center;color:#6b7280;">
+                                        No students found
+                                    </td>
+                                </tr>
+                                <% } %>
+            </tbody>
+        </table>
+        <button type="button" value="Back"><a href="http://localhost:3030/form">Back</a></button>
+    </div>
+
+</body>
+
+</html>
